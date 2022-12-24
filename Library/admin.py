@@ -2,10 +2,12 @@ from django.contrib import admin
 # Register your models here.
 
 
-from Library.models import Category
+from Library.models import Category,Library
 
-class categoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title','slug']
     list_filter = ['status']
-    prepopulated_fields = {'slug': ('title',)}
-admin.site.register(Category,categoryAdmin)
+
+# Register your models here.
+admin.site.register(Category, CategoryAdmin)
+admin.site.register(Library)
