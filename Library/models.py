@@ -1,6 +1,11 @@
+
+from django.contrib.auth.models import User
 from django.db import models
 from django.db.models import ForeignKey
+from django.forms import ModelForm
 from django.urls import reverse
+from django.utils.safestring import mark_safe
+
 
 # Create your models here.
 
@@ -26,7 +31,8 @@ class Category(models.Model):
     def __str__(self):
         return self.title
 
-class book(models.Model):
+
+class Library(models.Model):
         STATUS = (
             ('True', 'Evet'),
             ('False', 'Hayır'),
@@ -46,7 +52,15 @@ class book(models.Model):
         update_at = models.DateTimeField(auto_now=True)
 
         def get_absolute_url(self):
-            return reverse('book_detail', kwargs={'slug': self.slug})
+            return reverse('Library_detail', kwargs={'slug': self.slug})
+
+        def __str__(self):
+            return self.title
+
+class Images(models.Model):
+        title = models.CharField(max_length=50)
+        library = models.ForeignKey(Library, on_delete=models.CASCADE)
+        images = models.ImageField(blank=True, upload_to='images/')
 
         def __str__(self):
             return self.title

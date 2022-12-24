@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<div>Merhaba dfsdjango prdsojesi</div>
-{{ text }}
-</body>
-</html>
+{%  extends "homebaase.html" %}
+
+{% block title %} {% for setting in settings %} {{ setting.title}}{% endfor %} {% endblock %}
+
+
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}{% include "content.html" %}{% endblock %}
+{% block footer %}{% include "footer.html" %}{% endblock %}

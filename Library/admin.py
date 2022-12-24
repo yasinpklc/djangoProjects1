@@ -2,7 +2,7 @@ from django.contrib import admin
 # Register your models here.
 
 
-from book.models import Category
+from Library.models import Category
 
 class categoryAdmin(admin.ModelAdmin):
     list_display = ['title','slug']
