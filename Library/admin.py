@@ -3,7 +3,7 @@ from django.contrib import admin
 from Library.models import Category, Library, Images
 class LibraryImageInline(admin.TabularInline):
     model = Images
-    extra = 5
+    extra = 3
 class CategoryAdmin(admin.ModelAdmin):
     List_display = ['title','status','image_tag']
     readonly_fields = ('image_tag',)
