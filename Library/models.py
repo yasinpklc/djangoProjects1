@@ -6,12 +6,7 @@ from django.forms import ModelForm
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
-
 # Create your models here.
-
-
-
-
 
 class Category(models.Model):
     STATUS = (
