@@ -1,0 +1,35 @@
+{%  extends "homebase.html" %}
+
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+
+    <div class="site-section border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <div class="block-16">
+              <figure>
+                <img src="{{ setting.icon.url }}" alt="Image placeholder" class="img-fluid rounded">
+
+
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+
+
+            <div class="site-section-heading pt-6 mb-6">
+              <h2 class="text-black">Ödünç Verme Hizmeti</h2>
+            </div>
+              <p>{{ setting.references|safe }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+s
+{% endblock %}
+{% block footer %}{% include "footer.html" %}{% endblock %}

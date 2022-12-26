@@ -1,0 +1,24 @@
+{%  extends "homebase.html" %}
+{% block header %}{% include "header.html" %}{% endblock %}
+{% block sidebar %}{% include "sidebar.html" %}{% endblock %}
+{% block content %}
+
+    <div class="site-section border-bottom" data-aos="fade">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+
+          </div>
+
+          <div class="col-lg-5 mb-5">
+                <h5 class="font-weight-semi-bold mb-3">İletişim Bilgilerimiz</h5>
+                 </div>
+              <p>{{ setting.contact|safe }}</p>
+
+        </div>
+      </div>
+    </div>
+
+
+{% endblock %}
+{% block footer %}{% include "footer.html" %}{% endblock %}

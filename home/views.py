@@ -21,3 +21,19 @@ def hakkimizda(request):
     category = Category.objects.all()
     context = {'setting':setting, 'page': 'hakkimizda','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
     return render(request, 'hakkimizda.html', context)
+
+def oduncverme(request):
+    setting = Settings.objects.get(pk = 1)
+    categorydata = Category.objects.all()
+    sliderdata = Library.objects.all().order_by('?')[0:6]
+    category = Category.objects.all()
+    context = {'setting':setting, 'page': 'oduncverme','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
+    return render(request, 'oduncverme.html', context)
+
+def iletisim(request):
+    setting = Settings.objects.get(pk = 1)
+    categorydata = Category.objects.all()
+    sliderdata = Library.objects.all().order_by('?')[0:6]
+    category = Category.objects.all()
+    context = {'setting':setting, 'page': 'iletisim','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
+    return render(request, 'iletisim.html', context)
