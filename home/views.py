@@ -45,6 +45,14 @@ def sikcasorulansorular(request):
     category = Category.objects.all()
     context = {'setting':setting, 'page': 'sikcasorulansorular','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
     return render(request, 'sikcasorulansorular.html', context)
+
+def kutuphanelerimiz(request):
+    setting = Settings.objects.get(pk = 1)
+    categorydata = Category.objects.all()
+    sliderdata = Library.objects.all().order_by('?')[0:6]
+    category = Category.objects.all()
+    context = {'setting':setting, 'page': 'kutuphanelerimiz','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
+    return render(request, 'kutuphanelerimiz.html', context)
 def category_library(request, id):
     setting = Settings.objects.get(pk=1)
     categorydata = Category.objects.all()

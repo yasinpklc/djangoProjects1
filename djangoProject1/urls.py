@@ -28,6 +28,7 @@ urlpatterns = [
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('oduncverme/', views.oduncverme, name='oduncverme'),
     path('iletisim/', views.iletisim, name='iletisim'),
+    path('kutuphanelerimiz/', views.kutuphanelerimiz, name='kutuphanelerimiz'),
     path('sikcasorulansorular/', views.sikcasorulansorular, name='sikcasorulansorular'),
     path('login/', views.login_view, name='login_view'),
     path('logout/', views.logout_view, name='logout_view'),
