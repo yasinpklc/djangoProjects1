@@ -31,8 +31,7 @@ urlpatterns = [
     path('sikcasorulansorular/', views.sikcasorulansorular, name='sikcasorulansorular'),
     path('login/', views.login_view, name='login_view'),
     path('logout/', views.logout_view, name='logout_view'),
-
-
+    path('Library/<int:id>/<slug:slug>', views.library_detail, name='library_detail'),
 ]
 if settings.DEBUG:
     urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

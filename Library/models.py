@@ -27,7 +27,7 @@ class Category(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('category_Liblary', kwargs={'slug': self.slug})
+        return reverse('category_library', kwargs={'slug': self.slug})
 
     def image_tag(self):
         return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))
@@ -57,7 +57,7 @@ class Library(models.Model):
         def __str__(self):
             return self.title
         def get_absolute_url(self):
-            return reverse('Library_detail', kwargs={'slug': self.slug})
+            return reverse('library_detail', kwargs={'slug': self.slug})
 
         def image_tag(self):
             return mark_safe('<img src="{}" height="50"/>'.format(self.image.url))

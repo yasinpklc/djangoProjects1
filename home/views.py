@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
-from Library.models import Category,Library
+from Library.models import Category, Images, Library
 from home.models import Settings
 
 
@@ -45,6 +45,16 @@ def sikcasorulansorular(request):
     category = Category.objects.all()
     context = {'setting':setting, 'page': 'sikcasorulansorular','categorydata': categorydata,'sliderdata': sliderdata,'category':category}
     return render(request, 'sikcasorulansorular.html', context)
+def category_library(request, id):
+    setting = Settings.objects.get(pk=1)
+    categorydata = Category.objects.all()
+    selectedCategory = Category.objects.filter(pk=id)
+    library = Library.objects.filter(category_id=id)
+    context = {'setting': setting,
+               'selectedCategory': selectedCategory,
+               'library':library,
+               'categorydata':categorydata}
+    return render(request, 'category_library.html', context)
 
 def login_view(request):
     if request.method == 'POST':
@@ -63,3 +73,18 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def library_detail(request, id, slug):
+    setting = Setting.objects.get(pk=1)
+    categorydata = Category.objects.all()
+    selectedCategory = Category.objects.filter(pk=id)
+    library = Library.objects.filter(category_id=id)
+    category = Category.objects.all()
+    selectedlibrary = Library.objects.filter(pk=id)
+    context = {'setting': setting,
+               'category': category,
+               'selectedlibrary': selectedlibrary,
+               'selectedCategory': selectedCategory,
+               'library': library,
+               'categorydata': categorydata}
+    return render(request, 'library_detail.html', context)
