@@ -28,6 +28,11 @@ urlpatterns = [
     path('hakkimizda/', views.hakkimizda, name='hakkimizda'),
     path('oduncverme/', views.oduncverme, name='oduncverme'),
     path('iletisim/', views.iletisim, name='iletisim'),
+    path('sikcasorulansorular/', views.sikcasorulansorular, name='sikcasorulansorular'),
+    path('login/', views.login_view, name='login_view'),
+    path('logout/', views.logout_view, name='logout_view'),
+
+
 ]
 if settings.DEBUG:
     urlpatterns +=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

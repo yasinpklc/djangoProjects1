@@ -26,23 +26,20 @@
                     <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                         <div class="navbar-nav mr-auto py-0">
                             <a href="/" class="nav-item nav-link active">Anasayfa</a>
-                            <a href="hakkimizda" class="nav-item nav-link">Hakkımızda</a>
-                            <a href="oduncverme" class="nav-item nav-link">Ödünç Verme </a>
+                            <a href="/hakkimizda" class="nav-item nav-link">Hakkımızda</a>
+                            <a href="/oduncverme" class="nav-item nav-link">Ödünç Verme </a>
+                            <a href="/sikcasorulansorular" class="nav-item nav-link">Sıkça Sorulanlar Sorular </a>
                             <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Kütüphanelerimiz</a>
-                                <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">SUBÜ</a>
-                                    <a href="checkout.html" class="dropdown-item">SAÜ</a>
-                                </div>
+                                 <a href="/hakkimizda" class="nav-item nav-link">Kütüphanelerimiz</a>
                             </div>
-                            <a href="iletisim" class="nav-item nav-link">İletişim</a>
+                            <a href="/iletisim" class="nav-item nav-link">İletişim</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0">
                             {% if user.id is not None %}
                             <a href="/user" class="nav-item nav-link">{{ user.first_name }}</a>
                                 <a href="/logout/" class="nav-item nav-link">Çıkış Yap</a>
                                 {% else %}
-                                <a href="/login/" class="nav-item nav-link">Login</a>
+                                <a href="/login/" class="nav-item nav-link">Giriş Yap</a>
 
                             {% endif %}
                         </div>

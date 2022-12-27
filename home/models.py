@@ -25,6 +25,7 @@ class Settings(models.Model):
     aboutus = RichTextUploadingField()
     contact = RichTextUploadingField()
     references = RichTextUploadingField()
+    sorular = RichTextUploadingField()
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
     status = models.CharField(max_length=10, choices=STATUS)
